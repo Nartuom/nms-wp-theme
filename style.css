@@ -1,0 +1,534 @@
+/*  Theme Name: NMS Theme 
+    Author: Tombl
+    Version: 0.1
+*/
+
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  background-color: #212528;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  position: relative;
+  height: 100%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  position: fixed;
+  height: 70px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 4;
+  transition: all 1s;
+  padding: 0 10vw;
+}
+/* Navbar "active" animation*/
+nav.navActive {
+  height: 100%;
+  transition: 0.5s linear;
+}
+#brand-name {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 29px;
+  width: 180px;
+  margin-right: 10vw;
+  white-space: nowrap;
+}
+#toggle-button {
+  position: absolute;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-self: flex-start;
+  right: 10vw;
+  width: 25px;
+  height: 20px;
+  visibility: hidden;
+}
+.bar {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #ffffff;
+  margin: 3px 0 3px;
+  background: #ffffff;
+  opacity: 1;
+  transition: 1s all;
+}
+/* Burger click animations */
+.bar:first-of-type.onClick {
+  transition: 0.8s all ease-in-out 0.2s;
+  transform: translateY(8px) rotate(45deg);
+}
+.bar:nth-of-type(2).onClick {
+  transition: 0.5s;
+  transform: rotate(900deg);
+  opacity: 0;
+}
+.bar:last-of-type.onClick {
+  transition: 0.8s all ease-in-out 0.2s;
+  transform: translateY(-8px) rotate(-45deg);
+}
+#links-container {
+  height: 100%;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0 0;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+}
+.navbar-links {
+  visibility: visible;
+  margin: 0 2rem;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s all;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar-links:hover,
+.blog-thumbnail .wp-block-button__link:hover {
+  transform: translateY(-5px);
+  transition: all 0.4s ease;
+}
+#fbIcon {
+  height: 18px;
+  width: 18px;
+}
+/* Toggle links animations */
+.navbar-links.linksActive {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.4s all;
+}
+.grid-container {
+  margin: 0;
+  padding: 70px 0 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 15px;
+}
+h1 {
+  font-size: 50px;
+  line-height: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+p {
+  margin: 1rem 0;
+  line-height: 25px;
+}
+.sub-head {
+  font-size: 24px;
+  margin: 1rem 0;
+}
+#hero {
+  position: relative;
+  top: 70px;
+  height: 100vh;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.full-width-split {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.1+67,0.1+67,1+100 */
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 67%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+.grid-item full-width-split.hero {
+  position: relative;
+}
+.full-width-split__one,
+.full-width-split__two {
+  grid-column: span 5;
+  display: flex;
+  flex-basis: 40vw;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  min-width: 250px;
+}
+.full-width-split__one.hero {
+  grid-column: span 4;
+  height: 100%;
+  width: 100%;
+  flex-basis: 30vw;
+  align-self: center;
+}
+.full-width-split__two.hero {
+  grid-column: span 6;
+}
+.text-content-wrap {
+  height: 100%;
+  width: 100%;
+  align-self: center;
+}
+.text-content-wrap-right {
+  margin-right: 10vw;
+  margin-left: 4rem;
+  align-self: center;
+}
+.text-content-wrap-left {
+  margin-left: 10vw;
+  padding-right: 10vw;
+  align-self: center;
+}
+#ashLayer {
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#background-layer {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -2;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+0,262626+50,000000+100&0.95+50,1+100 */
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(38, 38, 38, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(38, 38, 38, 0.95) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(38, 38, 38, 0.95) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+#titleBox {
+  width: 100vw;
+  padding: 0 2rem 0 2rem;
+}
+.cover-image-wrap {
+  position: relative;
+  height: 80%;
+  width: auto;
+  min-width: 250px;
+  justify-self: right;
+  text-align: center;
+  margin-left: 10vw;
+  margin-top: 10vh;
+}
+.cover-image-wrap img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.image-wrap {
+  display: flex;
+  flex-basis: 40vw;
+  flex-grow: 1;
+  flex-shrink: 3;
+  justify-content: center;
+}
+.image-wrap img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-position: left;
+}
+#blurb {
+  z-index: 4;
+  background: #212528;
+  padding-bottom: 4rem;
+}
+.blurb a {
+  color: #e5ab46;
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+.amazon-icon {
+  margin: 1rem 0;
+  width: 25%;
+  min-width: 150px;
+  height: auto;
+}
+.about-home {
+  background-color: #ffffff !important;
+}
+#about,
+#contact-page {
+  position: relative;
+  background: #ebebeb;
+  color: #171717;
+  background-image: none;
+}
+#about .full-width-split,
+#contact-page .full-width-split {
+  background: none;
+}
+#blog {
+  color: #212528;
+  background: #ebebeb;
+  padding: 6rem 10vw;
+}
+.blog-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+.blog-grid-container a {
+  text-decoration: none;
+  color: black;
+}
+.grid-item-blog {
+  grid-column: span 1;
+}
+
+#blogNav {
+  grid-column: 2;
+}
+.blogPosts {
+  grid-column: 1;
+}
+.blog-thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-self: end;
+  background-color: #ffffff;
+  border: 1px solid #d5d5d5;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.blog-image-wrap {
+  width: 100%;
+  height: 200px;
+}
+.blog-image-wrap img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.blog-inner-text-wrap .blog-title {
+  font-size: 30px;
+}
+.blog-inner-text-wrap,
+.blog-image-text-wrap {
+  padding: 1rem 1rem;
+  align-self: center;
+}
+.blog-date {
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+.blog-thumbnail .wp-block-button__link {
+  color: #ffffff;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+.button,
+.button-Reskin {
+  color: white !important;
+  font-family: "Lato", sans-serif !important;
+  font-size: 18px !important;
+  padding: 1rem 1rem !important;
+  background-color: #9a491e !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+  margin: 1rem 0 2rem !important;
+}
+.wp-block-button__link {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  padding: 1rem 1rem;
+  background-color: #9a491e;
+  border-radius: 5px;
+  width: 11vw;
+  min-width: 174px;
+  margin: 1rem 0 2rem;
+  border-radius: 5px;
+}
+#newsletter {
+  height: 100vh;
+  color: #212528;
+  background: #d8d8d8;
+}
+.nms-contact-form.nms-form-input,
+.nms-form-input textarea {
+  width: 100%;
+  background-color: #ebebeb;
+  max-width: 800px;
+  border: none;
+}
+footer {
+  grid-row: 4;
+  display: flex;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100vw;
+  font-size: 15px;
+  text-align: center;
+  background-color: #020303;
+  z-index: 2;
+}
+ul.page-numbers {
+  list-style: none;
+  margin: 0;
+}
+
+.page-numbers:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+ul.page-numbers li {
+  display: block;
+  float: left;
+  margin: 0 4px 4px 0;
+  text-align: center;
+}
+
+.page-numbers a,
+.page-numbers span {
+  line-height: 1.6em;
+  display: block;
+  padding: 0 6px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+.page-numbers a span {
+  padding: 0;
+}
+
+.page-numbers a:hover,
+.page-numbers.current,
+.page-numbers.current:hover {
+  color: #000;
+  background: #f7f7f7;
+  text-decoration: none;
+}
+
+.page-numbers:hover {
+  text-decoration: none;
+}
+
+/* Course css */
+@media (max-width: 500px) {
+  .full-width-split {
+    display: flex;
+  }
+  .full-width-split__one,
+  .full-width-split__two {
+    padding: 2rem 2rem;
+  }
+  .text-content-wrap-right,
+  .text-content-wrap-left {
+    padding: 0;
+  }
+}
+@media (max-width: 960px) {
+  .navbar-links {
+    visibility: hidden;
+  }
+  #toggle-button {
+    visibility: visible;
+    top: 22px;
+    right: 10vw;
+  }
+  #brand-name {
+    position: absolute;
+    left: 10vw;
+    top: 20px;
+  }
+}
+@media (min-width: 1350px) {
+}
