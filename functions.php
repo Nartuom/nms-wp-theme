@@ -13,7 +13,6 @@
     add_action('wp_enqueue_scripts', 'nms_files');
     add_action('after_setup_theme', 'nms_features')
 ?>
- // Numbered Pagination
     <?php 
     if ( !function_exists( 'wpex_pagination' ) ) {
         

@@ -7,10 +7,20 @@
     <h2>BLOG</h2>
   </div>
   <div class="blog-grid-container">
- 
-  <?php $catquery = new WP_Query( 'cat=2&posts_per_page=6' ); ?>
-  
-  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
+  <?php 
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args = array(
+      'cat' => 2,
+      'posts_per_page' => 6,
+      'paged' => $paged
+    );
+    if(is_page('blog')) {
+    $catquery = new WP_Query( $args );
+    } else {
+      $catquery = new WP_Query( 'cat=2&posts_per_page=3' );
+    }
+    while($catquery->have_posts()) : $catquery->the_post();
+  ?>
   
     <div class="blog-thumbnail grid-item-blog">
       <?php if (has_post_thumbnail()) : ?>
@@ -53,8 +63,9 @@
         wp_reset_postdata();
     ?>
   </div>
-  
-  <?php wpex_pagination(); ?>  
+  <?php if(is_page('blog')){
+     wpex_pagination();
+   } ?>  
 </section>
 <?php get_footer(); ?>
 

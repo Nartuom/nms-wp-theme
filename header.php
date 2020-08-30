@@ -19,7 +19,7 @@
                 <li class="navbar-links"><a href="<?php echo site_url('/about')?>">ABOUT</a></li>
                 <li class="navbar-links"><a href="<?php echo site_url('/blog')?>">BLOG</a></li>
                 <li class="navbar-links"><a href="<?php echo site_url('/contact')?>">CONTACT</a></li>
-                <li class="navbar-links"><a><img id="fbIcon" src="<?php echo get_theme_file_uri('/images/f_logo_RGB-White_58.png')?>"></a></li>
+                <li class="navbar-links"><a href="https://www.facebook.com/simonphelpsauthor/"><img id="fbIcon" src="<?php echo get_theme_file_uri('/images/f_logo_RGB-White_58.png')?>"></a></li>
             </ul>
         </div>
     </nav>
