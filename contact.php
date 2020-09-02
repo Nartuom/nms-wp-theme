@@ -10,7 +10,7 @@
                         $post_id = "62";
                         $queried_post = get_post($post_id);
                         echo $queried_post->post_content;
-                        echo do_shortcode( '[wpforms id="64"]');
+                        echo do_shortcode( '[wpforms id="90"]');
                     ?>
                 </div>
                 

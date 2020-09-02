@@ -154,7 +154,8 @@ p {
 #hero {
   position: relative;
   top: 70px;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 4rem;
   background: -moz-linear-gradient(
     top,
     rgba(0, 0, 0, 0.1) 0%,
@@ -525,11 +526,11 @@ ul.page-numbers li {
 @media (max-width: 500px) {
   .full-width-split__one,
   .full-width-split__two {
-    padding: 2rem 2rem;
+    padding: 2rem 0;
   }
   .text-content-wrap-right,
   .text-content-wrap-left {
-    padding: 0;
+    padding: 1rem;
   }
 }
 @media (max-width: 960px) {
@@ -563,19 +564,24 @@ ul.page-numbers li {
   }
   .full-width-split__one,
   .full-width-split__two {
-    padding: 4rem 2rem;
+    padding: 4rem 0;
     grid-column: span 10;
   }
   .full-width-split__one.hero,
   .full-width-split__two.hero {
-    padding: 0 2rem;
+    padding: 0 0;
     grid-column: span 10;
   }
   .full-width-split__two.hero {
     margin-bottom: 8rem;
   }
+  #blog {
+    padding-left:1rem;
+    padding-right:1rem;
+  }
 
   .blog-grid-container {
+    margin-top: 2rem;
     grid-template-columns: 1fr;
   }
   .text-content-wrap-left,

@@ -10,14 +10,14 @@
   <?php 
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = array(
-      'cat' => 2,
+      'cat' => 3,
       'posts_per_page' => 6,
       'paged' => $paged
     );
     if(is_page('blog')) {
     $catquery = new WP_Query( $args );
     } else {
-      $catquery = new WP_Query( 'cat=2&posts_per_page=3' );
+      $catquery = new WP_Query( 'cat=3&posts_per_page=3' );
     }
     while($catquery->have_posts()) : $catquery->the_post();
   ?>
